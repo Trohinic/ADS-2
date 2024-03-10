@@ -29,7 +29,7 @@ double calcItem(double x, uint16_t n) {
     head *= x;
     tails *= i;
   }
-  double res = ((double)head) / ((double)tails);
+  double res = static_cast<double>(head) / static_cast<double>(tails);
   return res;
 }
 
