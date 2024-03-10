@@ -11,7 +11,8 @@ double pown(double value, uint16_t n) {
   return res;
 }
 
-uint64_t fact(uint16_t n) {
+
+uint64_t fact(uint64_t n) {
   uint64_t res = 1;
   for (int i = 2; i <= n; ++i) {
     res *= i;
@@ -23,8 +24,8 @@ double calcItem(double x, uint16_t n) {
   if (n == 0) {
     return 1;
   }
-  uint64_t head = 1;
-  uint64_t tails = 1;
+  double head = 1;
+  int tails = 1;
   for (int i = 1; i <= n; ++i) {
     head *= x;
     tails *= i;
@@ -37,10 +38,14 @@ double expn(double x, uint16_t count) {
   if (count == 1) {
     return 1;
   }
+  if (count == 2) {
+    return 2;
+  }
   double res = 1;
   double cur_num = 1;
-  for (int i = 1; i < count - 1; ++i) {
-    cur_num = cur_num * x / i;
+  for (int i = 1; i < count; ++i) {
+    cur_num *= x;
+    cur_num /= i;
     res += cur_num;
   }
   return res;
@@ -81,4 +86,5 @@ double cosn(double x, uint16_t count) {
   }
   return res;
 }
+
 
