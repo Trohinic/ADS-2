@@ -38,12 +38,9 @@ double expn(double x, uint16_t count) {
   if (count == 1) {
     return 1;
   }
-  if (count == 2) {
-    return 2;
-  }
   double res = 1;
   double cur_num = 1;
-  for (int i = 1; i < count; ++i) {
+  for (int i = 1; i < count+1; ++i) {
     cur_num *= x;
     cur_num /= i;
     res += cur_num;
